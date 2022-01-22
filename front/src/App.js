@@ -1,21 +1,19 @@
 import "./App.scss";
-import { DatePicker, Spin } from "antd";
-
-function onChange(date, dateString) {
-  console.log(date, dateString);
-}
+import Home from "./pages/Home"
+import Contact from "./pages/Contact"
+import Admin from "./pages/Admin";
+import SignIn from "./pages/Admin/SignIn";
 
 function App() {
   return (
     <div className="app">
-      <h2>Aplicación MERN</h2>
-      <h3>Titulo de prueba</h3>
-      <DatePicker onChange={onChange} />
-      <div className="example">
-        <Spin />
-      </div>
+      <Home/>
+      <Contact/>
+      <Admin/>
+      <SignIn/>
     </div>
   );
 }
 
 export default App;
+
