@@ -8076,6 +8076,11 @@ react-router-dom@^6.2.1:
     history "^5.2.0"
     react-router "6.2.1"
 
+react-router-mapping@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/react-router-mapping/-/react-router-mapping-2.0.1.tgz#0d9619ccf888370c2f31da531ca596eae935ecd3"
+  integrity sha512-Tae0Lmjuk9KS2eYnF0FzrjtwlrsdGl1JlKjglZ9zRuiU+z0kMt12qlz0sSfsMANj8TQy5VQ7EL5tJOc+uz9MEg==
+
 react-router@6.2.1:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.2.1.tgz#be2a97a6006ce1d9123c28934e604faef51448a3"

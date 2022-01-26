@@ -1,14 +1,14 @@
 import React from "react";
-import {layout} from "antd";
+import {Layout} from "antd";
 
 export default function LayoutAdmin(){
 
     return(
-        <layout>
+        <Layout>
             <h2>Menu Slider</h2>
             <div>Contenido...</div>
             <h5>Fotter...</h5>
-        </layout>
+        </Layout>
     );
 }
 
