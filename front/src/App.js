@@ -11,9 +11,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/admin" element={<LayoutAdmin />} />
-        <Route path="/register" element={<AdminHome />} />
-        <Route exact path="/admin/login" element={<AdminSingn />} />
+        <Route path="/admin/*" element={<LayoutAdmin />}>
+          <Route path="" element={<AdminHome />} />
+          <Route path="login" element={<AdminSingn />} />
+        </Route>
       </Routes>
     </Router>
   );
