@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAIK,AAAD,qBAAS,CAAA;EACL,KAAK,EAAE,wBAAwB;EAC/B,OAAO,EAAE,KAAK;CACjB;;AAEA,AAAD,sBAAU,CAAA;EACN,KAAK,EAAE,OAAiB;CAC3B;;AAEA,AAAD,qBAAS,CAAA;EACL,KAAK,EAAE,OAAgB;CAC1B",
+    "sources": [
+        "LayoutBasic.scss"
+    ],
+    "names": [],
+    "file": "LayoutBasic.css"
+}

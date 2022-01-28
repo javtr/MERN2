@@ -1,0 +1,18 @@
+
+
+.layout-basic{
+
+    &__header{
+        color: rgba(255, 0, 136, 0.698); 
+        padding: 150px;
+    }
+
+    &__content{
+        color: rgb(10, 190, 121);
+    }
+
+    &__footer{
+        color: rgb(0, 179, 211);
+    }
+
+}
