@@ -1,18 +1,24 @@
+@import "../scss/index.scss";
 
+.layout-basic {
+  transition: margin-left 0.2s;
 
-.layout-basic{
+  &__header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 0;
+    height: 65px;
+}
 
-    &__header{
-        color: rgba(255, 0, 136, 0.698); 
-        padding: 150px;
-    }
+  &__content {
+    min-height: calc(100vh - 65px);
+    padding: 90px 25px 25px 25px;
+}
 
-    &__content{
-        color: rgb(10, 190, 121);
-    }
-
-    &__footer{
-        color: rgb(0, 179, 211);
-    }
-
+  &__footer {
+    padding: 20px;
+}
 }
