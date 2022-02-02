@@ -8,15 +8,21 @@ import "./LayoutAdmin.scss";
 import { Content, Footer, Header } from "antd/lib/layout/layout";
 
 export default function LayoutAdmin(props) {
-const [menuCollapse, setMenuCollapsed] = useState(false);
+const [menuCollapsed, setMenuCollapsed] = useState(false);
 
 
   return (
     <Layout>
-      <MenuSider/>
-      <Layout className="layout-admin">
+      <MenuSider menuCollapsed={menuCollapsed}/>
+      <Layout className="layout-admin" 
+      style={{marginLeft: menuCollapsed ? "80px" : "200px"}}>
+
         <Header className="layout-admin__header">
-          <MenuTop/>
+          <MenuTop
+          menuCollapsed = {menuCollapsed}
+          setMenuCollapsed = {setMenuCollapsed}
+          
+          />
         </Header>
         <Content className="layout-admin__content">
           <Outlet />
