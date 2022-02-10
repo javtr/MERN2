@@ -15,7 +15,6 @@ function App() {
   return (
     <Router>
       <Routes>
-        
         <Route path="/" element={<LayoutBasic />}>
           <Route path="" element={<Home />} />
           <Route path="contact" element={<Contact />} />
@@ -24,8 +23,10 @@ function App() {
 
         <Route path="/admin/*" element={<LayoutAdmin />}>
           <Route path="" element={<AdminHome />} />
-          <Route path="login" element={<AdminSingn />} />
         </Route>
+
+        <Route path="/admin/login" element={<AdminSingn />} />
+
 
       </Routes>
     </Router>

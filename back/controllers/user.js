@@ -19,16 +19,11 @@ function singUp(req, res) {
     if (password !== repeatPassword) {
       res.status(404).send({ message: "las contraseñas son diferentes" });
     } else {
-      console.log("llega...");
-
       bcrypt.hash(password, saltRounds, function (err, hash) {
         if (err) {
-          console.log("llega error...");
           res.status(500).send({ message: "Error al encriptar la contraseña" });
         } else {
-          console.log("pasa error...");
           user.password = hash;
-
           user.save((err, userStored) => {
             if (err) {
               res.status(500).send({ message: "Error en el servidor" });
