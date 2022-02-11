@@ -16,16 +16,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LayoutBasic />}>
-          <Route path="" element={<Home />} />
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<h2>Error404</h2>} />
         </Route>
 
         <Route path="/admin/*" element={<LayoutAdmin />}>
           <Route path="" element={<AdminHome />} />
+          {/* <Route path="login" element={<AdminSingn />} /> */}
         </Route>
-
-        <Route path="/admin/login" element={<AdminSingn />} />
 
 
       </Routes>

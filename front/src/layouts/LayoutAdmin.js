@@ -35,14 +35,12 @@ export default function LayoutAdmin(props) {
     return (
       <>
         <Routes>
-          <Route path="/" element={<Navigate to="/admin/login"/>} />
+          <Route path="login" element={<SignIn />} />
+          <Route path="/" element={<Navigate to="login" />} />
         </Routes>
       </>
     );
   }
-
-
-
 
   return (
     <Layout>
