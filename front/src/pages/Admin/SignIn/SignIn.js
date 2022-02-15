@@ -4,6 +4,8 @@ import Logo from "../../../assets/img/png/logo-white.png";
 
 import "./SignIn.scss";
 
+import RegisterForm from "../../../components/Admin/RegisterForm"
+
 export default function SignIn() {
   const { Content } = Layout;
   const { TabPane } = Tabs;
@@ -21,7 +23,7 @@ export default function SignIn() {
               LoginForm
             </TabPane>
             <TabPane tab={<span>Nuevo usuario</span>} key="2">
-              RegisterForm
+              <RegisterForm/>
             </TabPane>
           </Tabs>
         </div>
