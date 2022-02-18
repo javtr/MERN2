@@ -53,49 +53,37 @@ export default function RegisterForm() {
   };
 
   const register = async (e) => {
-    // e.preventDefault();
-
     const emailVal = inputs.email;
     const passwordVal = inputs.password;
     const repeatPasswordVal = inputs.repeatPassword;
     const privacyPolicyVal = inputs.privacyPolicy;
 
-    if (!emailVal || !passwordVal || !repeatPasswordVal || !privacyPolicyVal) {
-      notification["error"]({
-        message: "Todos los campos son obligatorios",
-      });
-    } else {
-      if (passwordVal !== repeatPasswordVal) {
+    const emailValid = formValid.email;
+    const passwordValid = formValid.password;
+    const repeatPasswordValid = formValid.repeatPassword;
+    const privacyPolicyValid = formValid.privacyPolicy;
+
+    if (emailValid & passwordValid & repeatPasswordValid & privacyPolicyValid) {
+      
+      if (!emailVal || !passwordVal || !repeatPasswordVal || !privacyPolicyVal) {
         notification["error"]({
-          message: "Las contraseñas tienen que ser iguales.",
+          message: "Todos los campos son obligatorios",
         });
       } else {
-
-        console.log(inputs);
-
-        // const result = await signUpApi(inputs);
-        // if (!result.ok) {
-        //   notification["error"]({
-        //     message: result.message,
-        //   });
-        // } else {
-        //   notification["success"]({
-        //     message: result.message,
-        //   });
-        //   resetForm();
-        // }
+        if (passwordVal !== repeatPasswordVal) {
+          notification["error"]({
+            message: "Las contraseñas tienen que ser iguales.",
+          });
+        } else {
+          console.log(e);
+        }
       }
+    } else {
+      notification["error"]({
+        message: "Formato invalido en entradas",
+      });
     }
   };
-
-  // const resetForm = () => {
-  //   const inputs = document.getElementsByTagName("input");
-
-  //   for (let i = 0; i < inputs.length; i++) {
-  //     inputs[i].classList.remove("success");
-  //     inputs[i].classList.remove("error");
-  //   }
-  // };
 
   return (
     <Form className="register-form" onFinish={register} onChange={changeForm}>
