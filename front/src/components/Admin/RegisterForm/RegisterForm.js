@@ -6,6 +6,7 @@ import {
   emailValidation,
   minLengthValidation,
 } from "../../../utils/formValidation";
+import { signUpApi } from "../../../api/user";
 
 import "./RegisterForm.scss";
 
@@ -64,8 +65,12 @@ export default function RegisterForm() {
     const privacyPolicyValid = formValid.privacyPolicy;
 
     if (emailValid & passwordValid & repeatPasswordValid & privacyPolicyValid) {
-      
-      if (!emailVal || !passwordVal || !repeatPasswordVal || !privacyPolicyVal) {
+      if (
+        !emailVal ||
+        !passwordVal ||
+        !repeatPasswordVal ||
+        !privacyPolicyVal
+      ) {
         notification["error"]({
           message: "Todos los campos son obligatorios",
         });
@@ -75,7 +80,21 @@ export default function RegisterForm() {
             message: "Las contraseñas tienen que ser iguales.",
           });
         } else {
-          console.log(e);
+
+          const result = await signUpApi(inputs);
+
+          if (!result.ok) {
+            notification["error"]({
+              message: result.message,
+            });
+          } else {
+            notification["success"]({
+              message: result.message,
+            });
+
+            resetForm();
+          }
+
         }
       }
     } else {
@@ -83,6 +102,30 @@ export default function RegisterForm() {
         message: "Formato invalido en entradas",
       });
     }
+  };
+
+  const resetForm = () => {
+    const inputs = document.getElementsByTagName("input");
+
+    for (let i = 0; i < inputs.length; i++) {
+      inputs[i].classList.remove("success");
+      inputs[i].classList.remove("error");
+    }
+
+    setInputs({
+      email: "",
+      password: "",
+      repeatPassword: "",
+      privacyPolicy: false,
+    });
+
+    setFormValid({
+      email: false,
+      password: false,
+      repeatPassword: false,
+      privacyPolicy: false,
+    });
+
   };
 
   return (
