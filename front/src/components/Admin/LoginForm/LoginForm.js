@@ -20,7 +20,6 @@ export default function LoginForm() {
   };
 
   const login = async e => {
-    // e.preventDefault();
     const result = await signInApi(inputs);
 
     if (result.message) {
@@ -28,7 +27,9 @@ export default function LoginForm() {
         message: result.message
       });
     } else {
+      
       const { accessToken, refreshToken } = result;
+      
       localStorage.setItem(ACCESS_TOKEN, accessToken);
       localStorage.setItem(REFRESH_TOKEN, refreshToken);
 
@@ -38,8 +39,6 @@ export default function LoginForm() {
 
       window.location.href = "/admin";
     }
-
-    console.log(result);
   };
 
   return (
